@@ -4,14 +4,14 @@
 
 project:
   name: "DevFlow"
-  version: "1.2.0"
+  version: "1.2.2"
   description: "Sistema multi-agentes para desenvolvimento de software"
   created: "2025-11-15"
-  last_updated: "2026-03-22"
+  last_updated: "2026-03-24"
 
   # Estado atual
   status: "active"
-  phase: "system-design-integrated"
+  phase: "stable-community"
 
   # Repositório
   repository:
@@ -193,6 +193,43 @@ features:
     version: "0.6.0"
     description: "6th agent specializing in system design at scale (DDIA, SRE)"
 
+  - id: "challenger-agent"
+    name: "Challenger Agent"
+    status: "implemented"
+    version: "1.2.0"
+    description: "7th agent — adversarial review with OpenAI o3 after Guardian; available as standalone (devflow challenge) or via --challenger flag in autopilot"
+
+  - id: "persistent-memory"
+    name: "Persistent Memory"
+    status: "implemented"
+    version: "1.2.0"
+    description: "Each autopilot execution recorded in .devflow/memory.json — sessions, technical decisions, per-agent artifacts. Zero context drift across sessions."
+
+  - id: "adaptive-autopilot"
+    name: "Adaptive Autopilot"
+    status: "implemented"
+    version: "1.2.0"
+    description: "LLM classifies spec complexity (TRIVIAL/SIMPLE/MODERATE/COMPLEX) and decides which phases to run. Shows plan and asks for confirmation. --adaptive flag."
+
+  - id: "context-isolation"
+    name: "Context Isolation"
+    status: "implemented"
+    version: "1.2.0"
+    description: "Each agent receives only the output of the previous agent (N-1 scoped context), reducing ~87% tokens. --full-context restores full pipeline context."
+
+  - id: "dual-scaling-modes"
+    name: "Dual Scaling Modes per Agent"
+    status: "implemented"
+    version: "1.1.1"
+    description: "Each agent supports Parallel Subagents (Agent tool, default) and Claude Agent Teams (peer-to-peer, 'team' argument). Backward compatible."
+    trigger: "/agents:<name> team <task>"
+
+  - id: "agent-teams-default"
+    name: "Agent Teams Enabled by Default"
+    status: "implemented"
+    version: "1.2.2"
+    description: "devflow init and devflow update write CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1 to .claude/settings.json automatically, activating team mode for all 7 agents without manual setup."
+
 # Decisões arquiteturais (resumo - detalhes em ADRs)
 decisions:
   - id: "ADR-001"
@@ -215,15 +252,15 @@ decisions:
 
 # Métricas (atualizadas pelo Chronicler)
 metrics:
-  total_files: 28
-  total_agents: 6
+  total_agents: 7
+  total_features: 15
   total_decisions: 3
-  total_adrs: 2
-  total_features: 8
+  npm_package: "@evolve.labs/devflow"
+  npm_version: "1.2.2"
   documentation_coverage: "excellent"
   metadata_coverage: "excellent"
   orchestration_coverage: "complete"
-  last_snapshot: "2026-02-11"
+  last_snapshot: "2026-03-24"
 
 # Configurações
 config:
