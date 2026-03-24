@@ -1,8 +1,8 @@
-# DevFlow v1.2.0 - Sistema Multi-Agentes para Desenvolvimento de Software
+# DevFlow v1.2.3 - Sistema Multi-Agentes para Desenvolvimento de Software
 
 Sistema de **7 agentes especializados** para desenvolvimento de software com Claude Code, com **Autopilot** para execução automatizada do pipeline completo.
 
-[![Version](https://img.shields.io/badge/version-1.2.0-blue.svg)](docs/CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-1.2.3-blue.svg)](docs/CHANGELOG.md)
 [![npm](https://img.shields.io/npm/v/@evolve.labs/devflow.svg)](https://www.npmjs.com/package/@evolve.labs/devflow)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
@@ -90,7 +90,7 @@ Ativado com o argumento `team`. Usa Claude Agent Teams (peers que se comunicam d
 /agents:builder team implemente autenticacao JWT
 ```
 
-> **Pre-requisito:** Claude Code v2.1.32+ com `CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1` em `.claude/settings.json`
+> **`devflow init` configura isso automaticamente.** Para instalaçoes existentes: `devflow update`.
 
 |             | Modo Padrao               | Modo Team                  |
 | ----------- | ------------------------- | -------------------------- |
@@ -167,8 +167,9 @@ devflow challenge --model o3
 ```
 seu-projeto/
 ├── .claude/
+│   ├── settings.json   # Agent Teams habilitado (automatico)
 │   └── commands/
-│       ├── agents/     # Definicoes dos 6 agentes + team
+│       ├── agents/     # Definicoes dos 7 agentes + team
 │       └── quick/      # Quick start commands
 │
 ├── .devflow/
@@ -199,7 +200,8 @@ seu-projeto/
 | v0.8.0        | Autopilot terminal-based, CLI commands                      |
 | v1.0.0        | Security hardening, npm global install fix                  |
 | v1.1.1        | Dual Scaling Modes: Parallel Subagents + Claude Agent Teams |
-| **v1.2.0**    | **Remocao da Web IDE — foco em CLI + agentes**              |
+| v1.2.0        | Remocao da Web IDE, Persistent Memory, Adaptive Autopilot, Context Isolation, Challenger |
+| **v1.2.3**    | **Agent Teams habilitado por padrao no init/update**        |
 
 ---
 
@@ -218,4 +220,4 @@ MIT License - veja [LICENSE](LICENSE) para detalhes.
 
 ---
 
-**DevFlow v1.2.0** - Desenvolvido por [Evolve Labs](https://plataforma.evolvelabs.cloud)
+**DevFlow v1.2.3** - Desenvolvido por [Evolve Labs](https://plataforma.evolvelabs.cloud)
