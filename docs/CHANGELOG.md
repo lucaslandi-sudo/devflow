@@ -5,26 +5,19 @@ Todas as mudancas notaveis neste projeto serao documentadas neste arquivo.
 O formato e baseado em [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 e este projeto adere ao [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [1.2.2] - 2026-03-24
+## [1.2.3] - 2026-03-24
 
 ### Added
 
 - **Agent Teams habilitado por padrão** — `devflow init` e `devflow update` agora escrevem automaticamente `CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1` em `.claude/settings.json`, ativando o Modo Team para todos os 7 agentes sem configuração manual
-- **Merge seguro de settings** — se `.claude/settings.json` já existir com outras configurações do usuário (permissões, model, etc.), a chave `env` é mesclada sem sobrescrever
+- **Merge seguro de settings** — se `.claude/settings.json` já existir com outras configurações do usuário (permissões, model, etc.), a chave `env` é mesclada sem sobrescrever; se não existir, é criado
 
 ### Fixed
 
-- **Team mode silenciosamente inativo** — usuários que instalavam via `npm install -g @evolve.labs/devflow` tinham os agentes com Modo Team documentado mas a flag experimental nunca era escrita, então o comportamento peer-to-peer não funcionava
-
----
-
-## [1.2.1] - 2026-03-22
-
-### Fixed
-
-- **`lib/web.js` incluído no tarball** — arquivo morto (não importado por nenhum módulo após remoção da Web IDE) estava sendo publicado no npm via cobertura de `lib/`; removido completamente
-- **CLI mostrava "DevFlow Pro"** — `lib/utils.js` copiado do devflow-pro continha 3 ocorrências hardcoded de "DevFlow Pro"; corrigido para "DevFlow"
-- **`challenger.meta.yaml` ausente** — challenger era o único agente sem arquivo `.meta.yaml`; criado com estrutura completa
+- **Team mode silenciosamente inativo** — usuários que instalavam via npm tinham o Modo Team documentado nos agentes mas a flag `CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS` nunca era escrita; o peer-to-peer não funcionava
+- **CLI mostrava "DevFlow Pro"** — `lib/utils.js` continha 3 ocorrências hardcoded de "DevFlow Pro"; corrigido para "DevFlow"
+- **`challenger.meta.yaml` ausente** — challenger era o único agente sem `.meta.yaml`; criado com estrutura completa
+- **`lib/web.js` incluído no tarball** — arquivo morto após remoção da Web IDE ainda era publicado via cobertura de `lib/`; removido
 
 ---
 

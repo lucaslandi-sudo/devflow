@@ -4,7 +4,7 @@
 
 project:
   name: "DevFlow"
-  version: "1.2.2"
+  version: "1.2.3"
   description: "Sistema multi-agentes para desenvolvimento de software"
   created: "2025-11-15"
   last_updated: "2026-03-24"
@@ -227,7 +227,7 @@ features:
   - id: "agent-teams-default"
     name: "Agent Teams Enabled by Default"
     status: "implemented"
-    version: "1.2.2"
+    version: "1.2.3"
     description: "devflow init and devflow update write CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1 to .claude/settings.json automatically, activating team mode for all 7 agents without manual setup."
 
 # Decisões arquiteturais (resumo - detalhes em ADRs)
@@ -256,7 +256,7 @@ metrics:
   total_features: 15
   total_decisions: 3
   npm_package: "@evolve.labs/devflow"
-  npm_version: "1.2.2"
+  npm_version: "1.2.3"
   documentation_coverage: "excellent"
   metadata_coverage: "excellent"
   orchestration_coverage: "complete"
