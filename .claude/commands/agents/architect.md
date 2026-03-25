@@ -227,6 +227,33 @@ Critérios de aceitação:
 - NÃO crie stories ou defina requisitos — essas são do @strategist
 ```
 
+
+### Formato de Retorno (obrigatório)
+
+Ao finalizar, responda APENAS com este bloco estruturado (máx 400 palavras):
+
+```
+## RETORNO @{teammate}
+
+### Decisões arquiteturais
+- [decisão]: [rationale em 1 linha]
+- ADRs criados: [lista ou "nenhum"]
+
+### Artefatos gerados
+- [arquivo]: [propósito em 1 linha]
+
+### Assumpções feitas
+- [assunção]: [risco se estiver errada]
+
+### Bloqueadores
+- [bloqueador ou "nenhum"]
+
+### @builder precisa saber
+- Tech stack confirmado: [lista]
+- Padrões obrigatórios: [lista]
+- O que NÃO implementar: [lista]
+```
+
 ---
 
 ## 🤝 MODO TEAM — CLAUDE AGENT TEAMS
