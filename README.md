@@ -1,4 +1,4 @@
-# DevFlow v1.2.7 - Sistema Multi-Agentes para Desenvolvimento de Software
+# DevFlow v1.2.8 - Sistema Multi-Agentes para Desenvolvimento de Software
 
 Sistema de **7 agentes especializados** para desenvolvimento de software com Claude Code, com **Autopilot** para execução automatizada do pipeline completo.
 
@@ -50,15 +50,15 @@ devflow challenge [review-file] # Review adversarial com OpenAI (standalone)
 
 ## Os 7 Agentes
 
-| #   | Agente                      | Funcao                        | Uso                                         |
-| --- | --------------------------- | ----------------------------- | ------------------------------------------- |
-| 1   | **/agents:strategist**      | Planejamento & Produto        | Requisitos, PRDs, user stories              |
-| 2   | **/agents:architect**       | Design & Arquitetura          | Decisoes tecnicas, ADRs, APIs               |
-| 3   | **/agents:system-designer** | System Design & Escala        | SDDs, RFCs, capacity planning, SLOs         |
-| 4   | **/agents:builder**         | Implementacao                 | Codigo, reviews, refactoring                |
-| 5   | **/agents:guardian**        | Qualidade & Seguranca         | Testes, security, performance               |
-| 6   | **/agents:challenger**      | Review Adversarial (OpenAI)   | Desafia o Guardian, encontra blind spots    |
-| 7   | **/agents:chronicler**      | Documentacao & Memoria        | CHANGELOG, snapshots, stories               |
+| #   | Agente                      | Funcao                      | Uso                                      |
+| --- | --------------------------- | --------------------------- | ---------------------------------------- |
+| 1   | **/agents:strategist**      | Planejamento & Produto      | Requisitos, PRDs, user stories           |
+| 2   | **/agents:architect**       | Design & Arquitetura        | Decisoes tecnicas, ADRs, APIs            |
+| 3   | **/agents:system-designer** | System Design & Escala      | SDDs, RFCs, capacity planning, SLOs      |
+| 4   | **/agents:builder**         | Implementacao               | Codigo, reviews, refactoring             |
+| 5   | **/agents:guardian**        | Qualidade & Seguranca       | Testes, security, performance            |
+| 6   | **/agents:challenger**      | Review Adversarial (OpenAI) | Desafia o Guardian, encontra blind spots |
+| 7   | **/agents:chronicler**      | Documentacao & Memoria      | CHANGELOG, snapshots, stories            |
 
 Cada agente tem **hard stops** — limites rigidos que impedem de fazer trabalho de outros agentes.
 
@@ -154,11 +154,11 @@ devflow challenge docs/security/guardian-review.md --spec docs/specs/feature.md
 devflow challenge --model o3
 ```
 
-| Modelo | Custo/review | Quando usar |
-|--------|-------------|-------------|
-| `gpt-5.4` | ~$0.01 | Padrao — rapido, code-focused |
-| `o3-mini` | ~$0.03 | Reasoning alternativo |
-| `o3` | ~$0.28 | Seguranca critica, compliance, pagamentos |
+| Modelo    | Custo/review | Quando usar                               |
+| --------- | ------------ | ----------------------------------------- |
+| `gpt-5.4` | ~$0.01       | Padrao — rapido, code-focused             |
+| `o3-mini` | ~$0.03       | Reasoning alternativo                     |
+| `o3`      | ~$0.28       | Seguranca critica, compliance, pagamentos |
 
 ---
 
@@ -191,18 +191,18 @@ seu-projeto/
 
 ## Versoes
 
-| Versao        | Features                                                    |
-| ------------- | ----------------------------------------------------------- |
-| v0.1.0        | Multi-agent system, Documentation automation                |
-| v0.2.0        | Structured metadata, Knowledge graph                        |
-| v0.3.0        | Hard stops, Mandatory delegation                            |
-| v0.4.0–v0.7.0 | Web IDE, System Designer agent, npm package                 |
-| v0.8.0        | Autopilot terminal-based, CLI commands                      |
-| v1.0.0        | Security hardening, npm global install fix                  |
-| v1.1.1        | Dual Scaling Modes: Parallel Subagents + Claude Agent Teams |
+| Versao        | Features                                                                                 |
+| ------------- | ---------------------------------------------------------------------------------------- |
+| v0.1.0        | Multi-agent system, Documentation automation                                             |
+| v0.2.0        | Structured metadata, Knowledge graph                                                     |
+| v0.3.0        | Hard stops, Mandatory delegation                                                         |
+| v0.4.0–v0.7.0 | Web IDE, System Designer agent, npm package                                              |
+| v0.8.0        | Autopilot terminal-based, CLI commands                                                   |
+| v1.0.0        | Security hardening, npm global install fix                                               |
+| v1.1.1        | Dual Scaling Modes: Parallel Subagents + Claude Agent Teams                              |
 | v1.2.0        | Remocao da Web IDE, Persistent Memory, Adaptive Autopilot, Context Isolation, Challenger |
-| v1.2.5        | Agent Teams habilitado por padrao no init/update            |
-| **v1.2.7**    | **Spawn templates com contexto obrigatorio para teammates** |
+| v1.2.5        | Agent Teams habilitado por padrao no init/update                                         |
+| **v1.2.8**    | **Spawn templates com contexto obrigatorio para teammates**                              |
 
 ---
 
